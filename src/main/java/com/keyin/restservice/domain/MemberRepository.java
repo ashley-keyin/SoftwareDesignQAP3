@@ -6,11 +6,11 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @RepositoryRestResource(collectionResourceRel = "member", path = "member")
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
-    List<Member> findById(@Param("member_id") long id);
     List<Member> findByMemberFirstName(@Param("member_first_name") String memberFirstName);
     List<Member> findByMemberLastName(@Param("member_last_name") String memberLastName);
     List<Member> findByMemberAddress(@Param("member_address") String memberAddress);

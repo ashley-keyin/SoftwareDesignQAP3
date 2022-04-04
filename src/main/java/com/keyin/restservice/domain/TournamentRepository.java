@@ -6,11 +6,11 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @RepositoryRestResource(collectionResourceRel = "tournament", path = "tournament")
 public interface TournamentRepository extends JpaRepository<Tournament, Long> {
 
-    List<Tournament> findById(@Param("tournament_id") long id);
     List<Tournament> findByTournamentStartDate(@Param("tournament_start_date") LocalDate tournamentStartDate);
     List<Tournament> findByTournamentEndDate(@Param("tournament_end_date") LocalDate tournamentEndDate);
     List<Tournament> findByTournamentLocation(@Param("tournament_location") String tournamentLocation);

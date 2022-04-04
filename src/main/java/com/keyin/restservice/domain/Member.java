@@ -9,7 +9,7 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private long id;
+    private Long id;
     private String memberFirstName;
     private String memberLastName;
 
@@ -30,7 +30,7 @@ public class Member {
     public Member() {
     }
 
-    public Member(long id,
+    public Member(Long id,
                   String memberFirstName,
                   String memberLastName,
                   String memberAddress,
@@ -80,11 +80,11 @@ public class Member {
         this.upcomingTournaments = upcomingTournaments;
     }
 
-    public long getMemberId() {
+    public long getId() {
         return id;
     }
 
-    public void setMemberId(long memberId) {
+    public void setId(Long id) {
         this.id = id;
     }
 

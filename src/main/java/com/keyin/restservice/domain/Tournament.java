@@ -11,7 +11,7 @@ public class Tournament {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private long id;
+    private Long id;
     private LocalDate tournamentStartDate;
     private LocalDate tournamentEndDate;
     private String tournamentLocation;
@@ -23,7 +23,7 @@ public class Tournament {
     public Tournament(){
     }
 
-    public Tournament(long id,
+    public Tournament(Long id,
                       LocalDate tournamentStartDate,
                       LocalDate tournamentEndDate,
                       String tournamentLocation,
@@ -57,11 +57,11 @@ public class Tournament {
         this.finalStandings = finalStandings;
     }
 
-    public long getTournamentId() {
+    public long getId() {
         return id;
     }
 
-    public void setTournamentId(long tournamentId) {
+    public void setId(Long id) {
         this.id = id;
     }
 
