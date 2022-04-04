@@ -80,7 +80,7 @@ public class Member {
         this.upcomingTournaments = upcomingTournaments;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

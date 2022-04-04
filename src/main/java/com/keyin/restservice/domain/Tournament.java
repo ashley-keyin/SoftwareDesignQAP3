@@ -10,8 +10,8 @@ import java.time.LocalDate;
 public class Tournament {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
+
     private LocalDate tournamentStartDate;
     private LocalDate tournamentEndDate;
     private String tournamentLocation;
@@ -57,7 +57,7 @@ public class Tournament {
         this.finalStandings = finalStandings;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
