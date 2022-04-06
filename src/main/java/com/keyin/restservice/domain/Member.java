@@ -8,16 +8,11 @@ import java.util.List;
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id;
 
-    private Long id;
     private String memberFirstName;
     private String memberLastName;
-
     private String memberAddress;
-
-    @OneToMany
-    private List<Tournament> tournaments;
-
     private String memberEmail;
     private String memberPhoneNumber;
     private LocalDate membershipStartDate;
@@ -27,58 +22,8 @@ public class Member {
     private String pastTournaments;
     private String upcomingTournaments;
 
-    public Member() {
-    }
-
-    public Member(Long id,
-                  String memberFirstName,
-                  String memberLastName,
-                  String memberAddress,
-                  String memberEmail,
-                  String memberPhoneNumber,
-                  LocalDate membershipStartDate,
-                  String membershipDuration,
-                  String membershipType,
-                  String currentTournaments,
-                  String pastTournaments,
-                  String upcomingTournaments) {
-        this.id = id;
-        this.memberFirstName = memberFirstName;
-        this.memberLastName = memberLastName;
-        this.memberAddress = memberAddress;
-        this.memberEmail = memberEmail;
-        this.memberPhoneNumber = memberPhoneNumber;
-        this.membershipStartDate = membershipStartDate;
-        this.membershipDuration = membershipDuration;
-        this.membershipType = membershipType;
-        this.currentTournaments = currentTournaments;
-        this.pastTournaments = pastTournaments;
-        this.upcomingTournaments = upcomingTournaments;
-    }
-
-    public Member(String memberFirstName,
-                  String memberLastName,
-                  String memberAddress,
-                  String memberEmail,
-                  String memberPhoneNumber,
-                  LocalDate membershipStartDate,
-                  String membershipDuration,
-                  String membershipType,
-                  String currentTournaments,
-                  String pastTournaments,
-                  String upcomingTournaments) {
-        this.memberFirstName = memberFirstName;
-        this.memberLastName = memberLastName;
-        this.memberAddress = memberAddress;
-        this.memberEmail = memberEmail;
-        this.memberPhoneNumber = memberPhoneNumber;
-        this.membershipStartDate = membershipStartDate;
-        this.membershipDuration = membershipDuration;
-        this.membershipType = membershipType;
-        this.currentTournaments = currentTournaments;
-        this.pastTournaments = pastTournaments;
-        this.upcomingTournaments = upcomingTournaments;
-    }
+    @ManyToMany
+    private List<Tournament> tournaments;
 
     public Long getId() {
         return id;
@@ -93,7 +38,7 @@ public class Member {
         return memberFirstName;
     }
 
-    public void setMemberFirstName(String memberFirstNameName) {
+    public void setMemberFirstName(String memberFirstName) {
         this.memberFirstName = memberFirstName;
     }
 
@@ -177,20 +122,4 @@ public class Member {
         this.upcomingTournaments = upcomingTournaments;
     }
 
-    @Override
-    public String toString() {
-        return ("Member{" + "Member Id=" + id +
-                ", Member First Name='" + memberFirstName + '\'' +
-                ", Member Last Name='" + memberLastName + '\'' +
-                ", Member Address='" + memberAddress + '\'' +
-                ", Member Email='" + memberEmail + '\'' +
-                ", Member Phone Number='" + memberPhoneNumber + '\'' +
-                ", Membership Start Date='" + membershipStartDate + '\'' +
-                ", Membership Duration='" + membershipDuration + '\'' +
-                ", Membership Type='" + membershipType + '\'' +
-                ", Current Tournaments='" + currentTournaments + '\'' +
-                ", Past Tournaments='" + pastTournaments + '\'' +
-                ", Upcoming Tournaments='" + upcomingTournaments + '\'' +
-                '}');
-    }
 }

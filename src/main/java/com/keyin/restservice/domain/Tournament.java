@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public class Tournament {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    Long id;
 
     private LocalDate tournamentStartDate;
     private LocalDate tournamentEndDate;
@@ -20,42 +20,6 @@ public class Tournament {
     private String tournamentParticipants;
     private String finalStandings;
 
-    public Tournament(){
-    }
-
-    public Tournament(Long id,
-                      LocalDate tournamentStartDate,
-                      LocalDate tournamentEndDate,
-                      String tournamentLocation,
-                      double tournamentEntryFee,
-                      double cashPrizeAmount,
-                      String tournamentParticipants,
-                      String finalStandings) {
-        this.id = id;
-        this.tournamentStartDate = tournamentStartDate;
-        this.tournamentEndDate = tournamentEndDate;
-        this.tournamentLocation = tournamentLocation;
-        this.tournamentEntryFee = tournamentEntryFee;
-        this.cashPrizeAmount = cashPrizeAmount;
-        this.tournamentParticipants = tournamentParticipants;
-        this.finalStandings = finalStandings;
-    }
-
-    public Tournament(LocalDate tournamentStartDate,
-                      LocalDate tournamentEndDate,
-                      String tournamentLocation,
-                      double tournamentEntryFee,
-                      double cashPrizeAmount,
-                      String tournamentParticipants,
-                      String finalStandings) {
-        this.tournamentStartDate = tournamentStartDate;
-        this.tournamentEndDate = tournamentEndDate;
-        this.tournamentLocation = tournamentLocation;
-        this.tournamentEntryFee = tournamentEntryFee;
-        this.cashPrizeAmount = cashPrizeAmount;
-        this.tournamentParticipants = tournamentParticipants;
-        this.finalStandings = finalStandings;
-    }
 
     public Long getId() {
         return id;
@@ -121,17 +85,5 @@ public class Tournament {
         this.finalStandings = finalStandings;
     }
 
-    @Override
-    public String toString() {
-        return "Tournament{" +
-                "Tournament Id=" + id +
-                ", Tournament Start Date='" + tournamentStartDate + '\'' +
-                ", Tournament End Date='" + tournamentEndDate + '\'' +
-                ", Tournament Location='" + tournamentLocation + '\'' +
-                ", Tournament Entry Fee=" + "$" + tournamentEntryFee +
-                ", Cash Prize Amount=" + "$" + cashPrizeAmount +
-                ", Tournament Participants='" + tournamentParticipants + '\'' +
-                ", Final Standings='" + finalStandings + '\'' +
-                '}';
-    }
+
 }
