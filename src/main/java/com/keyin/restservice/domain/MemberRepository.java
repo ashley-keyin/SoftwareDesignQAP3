@@ -21,5 +21,5 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     List<Member> findByCurrentTournaments(@Param("current_tournaments") String currentTournaments);
     List<Member> findByPastTournaments(@Param("past_tournaments") String pastTournaments);
     List<Member> findByUpcomingTournaments(@Param("upcoming_tournaments") String upcomingTournaments);
-
+    List<Member> findByTournaments_Id(@Param("tournaments_id") Long id);
 }

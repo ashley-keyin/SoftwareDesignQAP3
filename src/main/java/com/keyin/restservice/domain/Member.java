@@ -6,10 +6,13 @@ import java.util.List;
 
 @Entity
 public class Member {
+
+    //Initialize auto id increments
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
+    // Initialize other instance variables
     private String memberFirstName;
     private String memberLastName;
     private String memberAddress;
@@ -22,8 +25,11 @@ public class Member {
     private String pastTournaments;
     private String upcomingTournaments;
 
+    // Create manytomany relationship between members and tournaments
     @ManyToMany
     private List<Tournament> tournaments;
+
+    // Getters and setters
 
     public Long getId() {
         return id;
@@ -122,4 +128,12 @@ public class Member {
         this.upcomingTournaments = upcomingTournaments;
     }
 
+
+    public List<Tournament> getTournaments() {
+        return tournaments;
+    }
+
+    public void setTournaments(List<Tournament> tournaments) {
+        this.tournaments = tournaments;
+    }
 }

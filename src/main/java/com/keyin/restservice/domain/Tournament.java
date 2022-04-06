@@ -8,10 +8,12 @@ import java.time.LocalDate;
 
 @Entity
 public class Tournament {
+    // initialize ID
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
+    // Initialize instance variables
     private LocalDate tournamentStartDate;
     private LocalDate tournamentEndDate;
     private String tournamentLocation;
@@ -20,6 +22,7 @@ public class Tournament {
     private String tournamentParticipants;
     private String finalStandings;
 
+    // Getters and setters
 
     public Long getId() {
         return id;
