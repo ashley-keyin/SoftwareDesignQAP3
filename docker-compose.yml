@@ -1,0 +1,8 @@
+version: '3'
+services:
+  myapp-main:
+    image: keyin/docker-qap3
+    ports:
+      - 8080:8080
+    environment:
+      - spring.datasource.url=jdbc:mysql://host.docker.internal:3306/golf_club
