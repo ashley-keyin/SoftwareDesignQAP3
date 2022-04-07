@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 public class Member {
 
-    //Initialize auto id increments
+    //Initialize id as primary key and auto-generate id increments
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;

@@ -14,6 +14,7 @@ public class Tournament {
     Long id;
 
     // Initialize instance variables
+    private String tournamentName;
     private LocalDate tournamentStartDate;
     private LocalDate tournamentEndDate;
     private String tournamentLocation;
@@ -30,6 +31,14 @@ public class Tournament {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getTournamentName() {
+        return tournamentName;
+    }
+
+    public void setTournamentName(String tournamentName) {
+        this.tournamentName = tournamentName;
     }
 
     public LocalDate getTournamentStartDate() {

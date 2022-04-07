@@ -11,6 +11,7 @@ import java.util.Optional;
 @RepositoryRestResource(collectionResourceRel = "tournament", path = "tournament")
 public interface TournamentRepository extends JpaRepository<Tournament, Long> {
 
+    List<Tournament> findByTournamentName(@Param("tournament_name") String tournamentName);
     List<Tournament> findByTournamentStartDate(@Param("tournament_start_date") LocalDate tournamentStartDate);
     List<Tournament> findByTournamentEndDate(@Param("tournament_end_date") LocalDate tournamentEndDate);
     List<Tournament> findByTournamentLocation(@Param("tournament_location") String tournamentLocation);
